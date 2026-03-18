@@ -1,6 +1,6 @@
 {
   "name": "gorth-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared shadcn-based UI package",
   "type": "module",
   "author": "Gorthenburg",
@@ -26,22 +26,27 @@
       "import": "./.ui/lib/*.js",
       "require": "./.ui/lib/*.cjs"
     },
-    "./ui/*": {
+    "./*/default": {
       "types": "./.ui/components/ui/*.d.ts",
       "import": "./.ui/components/ui/*.js",
       "require": "./.ui/components/ui/*.cjs"
     },
-    "./io/*": {
+    "./*/pattern": {
       "types": "./.ui/components/io/*.d.ts",
       "import": "./.ui/components/io/*.js",
       "require": "./.ui/components/io/*.cjs"
     },
-    "./layout/*": {
+    "./*/layout": {
       "types": "./.ui/components/layout/*.d.ts",
       "import": "./.ui/components/layout/*.js",
       "require": "./.ui/components/layout/*.cjs"
     },
-    "./background/*": {
+    "./*/block": {
+      "types": "./.ui/components/block/*.d.ts",
+      "import": "./.ui/components/block/*.js",
+      "require": "./.ui/components/block/*.cjs"
+    },
+    "./*/background": {
       "types": "./.ui/components/background/*.d.ts",
       "import": "./.ui/components/background/*.js",
       "require": "./.ui/components/background/*.cjs"
