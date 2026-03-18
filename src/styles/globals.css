@@ -6,6 +6,7 @@
 @source "../../../apps/**/*.{ts,tsx}";
 @source "../../../components/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
+@source "../../.ui/**/*.{js,cjs,mjs}";
 
 :root {
   --background: oklch(1 0 0);
