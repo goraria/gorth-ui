@@ -17,7 +17,8 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "outDir": ".ui"
+    "outDir": ".ui",
+    "ignoreDeprecations": "6.0"
   },
   "include": ["src"]
 }
