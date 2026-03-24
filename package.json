@@ -1,6 +1,6 @@
 {
   "name": "gorth-ui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Shared shadcn-based UI package",
   "type": "module",
   "author": "Gorthenburg",
@@ -20,6 +20,11 @@
       "types": "./.ui/index.d.ts",
       "import": "./.ui/index.js",
       "require": "./.ui/index.cjs"
+    },
+    "./cores/lucide": {
+      "types": "./.ui/cores/lucide.d.ts",
+      "import": "./.ui/cores/lucide.js",
+      "require": "./.ui/cores/lucide.cjs"
     },
     "./lib/*": {
       "types": "./.ui/lib/*.d.ts",
@@ -75,8 +80,8 @@
     "postcss.config.mjs"
   ],
   "scripts": {
-    "build": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts --format esm,cjs --dts --out-dir .ui --clean",
-    "dev": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts --format esm,cjs --dts --out-dir .ui --watch",
+    "build": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir .ui --clean",
+    "dev": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir .ui --watch",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
@@ -92,7 +97,7 @@
     "shadcn:io:hooks": "bash ./scripts/shadcn-io-hooks.sh"
   },
   "dependencies": {
-    "ai": "^6.0.137",
+    "ai": "^6.0.138",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -101,6 +106,7 @@
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.38.0",
     "input-otp": "^1.4.2",
+    "lucide-react": "^1.6.0",
     "motion": "^12.38.0",
     "radix-ui": "^1.4.3",
     "react-day-picker": "^9.14.0",
@@ -108,7 +114,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-image-crop": "^11.0.10",
     "react-medium-image-zoom": "^5.4.1",
-    "react-resizable-panels": "^4.7.5",
+    "react-resizable-panels": "^4.7.6",
     "react-svg-credit-card-payment-icons": "^5.1.2",
     "react-use-measure": "^2.1.7",
     "recharts": "3.8.0",
@@ -122,7 +128,6 @@
     "vaul": "^1.1.2"
   },
   "peerDependencies": {
-    "lucide-react": "^1.0.1",
     "next": "^16.2.1",
     "next-themes": "^0.4.6",
     "react": "^19.2.4",
@@ -134,7 +139,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.183.1",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.4",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.2.2",
     "tsup": "^8.5.1",
