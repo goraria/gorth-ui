@@ -1,6 +1,6 @@
 {
   "name": "gorth-ui",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Shared shadcn-based UI package",
   "type": "module",
   "author": "Gorthenburg",
@@ -55,6 +55,11 @@
       "types": "./.ui/components/block/*.d.ts",
       "import": "./.ui/components/block/*.js",
       "require": "./.ui/components/block/*.cjs"
+    },
+    "./custom/*": {
+      "types": "./.ui/components/custom/*.d.ts",
+      "import": "./.ui/components/custom/*.js",
+      "require": "./.ui/components/custom/*.cjs"
     },
     "./background/*": {
       "types": "./.ui/components/background/*.d.ts",
