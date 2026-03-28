@@ -19,9 +19,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 
-export function TeamSwitcher({
-  teams,
-}: {
+export function TeamSwitcher({ teams, }: {
   teams: {
     name: string
     logo: ElementType
