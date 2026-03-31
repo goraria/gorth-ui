@@ -31,6 +31,11 @@
       "import": "./.ui/cores/sonner.js",
       "require": "./.ui/cores/sonner.cjs"
     },
+    "./cores/radix": {
+      "types": "./.ui/cores/radix.d.ts",
+      "import": "./.ui/cores/radix.js",
+      "require": "./.ui/cores/radix.cjs"
+    },
     "./lib/*": {
       "types": "./.ui/lib/*.d.ts",
       "import": "./.ui/lib/*.js",

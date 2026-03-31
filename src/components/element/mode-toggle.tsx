@@ -77,7 +77,7 @@ export function ModeToggle({
               <DropdownMenuItem
                 disabled={theme === "light"}
                 onClick={() => setTheme("light")}
-                className="h-9 gap-3 p-2.5"
+                className=""
               >
                 <Sun className="h-4 w-4 text-primary" />
                 {/* Light */}
@@ -85,7 +85,7 @@ export function ModeToggle({
               <DropdownMenuItem
                 disabled={theme === "system"}
                 onClick={() => setTheme("system")}
-                className="h-9 gap-3 p-2.5"
+                className=""
               >
                 <Monitor className="h-4 w-4 text-primary" />
                 {/* System */}
@@ -93,7 +93,7 @@ export function ModeToggle({
               <DropdownMenuItem
                 disabled={theme === "dark"}
                 onClick={() => setTheme("dark")}
-                className="h-9 gap-3 p-2.5"
+                className=""
               >
                 <Moon className="h-4 w-4 text-primary" />
                 {/* Dark */}
@@ -114,21 +114,21 @@ export function ModeToggle({
           <DropdownMenuContent align="end">
             <DropdownMenuItem
               onClick={() => setTheme("light")}
-              className="h-9 gap-3 p-2.5"
+              className=""
             >
               <Sun className="h-4 w-4" />
               Light
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => setTheme("dark")}
-              className="h-9 gap-3 p-2.5"
+              className=""
             >
               <Moon className="h-4 w-4" />
               Dark
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => setTheme("system")}
-              className="h-9 gap-3 p-2.5"
+              className=""
             >
               <Monitor className="h-4 w-4" />
               System
