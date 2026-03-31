@@ -1,6 +1,6 @@
 {
   "name": "gorth-ui",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Shared shadcn-based UI package",
   "type": "module",
   "author": "Gorthenburg",
@@ -107,7 +107,7 @@
     "shadcn:io:hooks": "bash ./scripts/shadcn-io-hooks.sh"
   },
   "dependencies": {
-    "ai": "^6.0.141",
+    "ai": "^6.0.142",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -124,7 +124,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-image-crop": "^11.0.10",
     "react-medium-image-zoom": "^5.4.1",
-    "react-resizable-panels": "^4.7.6",
+    "react-resizable-panels": "^4.8.0",
     "react-svg-credit-card-payment-icons": "^5.1.2",
     "react-use-measure": "^2.1.7",
     "recharts": "3.8.1",
