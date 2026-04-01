@@ -96,7 +96,7 @@
   ],
   "scripts": {
     "build": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir .ui --clean",
-    "dev": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir .ui --watch",
+    "dev": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir dist --watch",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
