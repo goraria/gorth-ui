@@ -102,7 +102,7 @@
     "typecheck": "tsc --noEmit",
     "prepare": "pnpm build",
     "update": "pnpm update",
-    "shadcn": "pnpm run shadcn:ui:all",
+    "shadcn": "pnpm dlx shadcn@latest add -a -o",
     "shadcn:ui": "pnpm dlx shadcn@latest add -o -p src/components/ui",
     "shadcn:ui:all": "pnpm dlx shadcn@latest add -a -o -p src/components/ui",
     "shadcn:io": "pnpm dlx shadcn@latest add -o -p src/components/io",
