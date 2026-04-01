@@ -185,7 +185,6 @@ export function NavMain({ items }: NavCoreProps) {
                             asChild
                             isActive={isSubMenuActive(subItem)}
                             onClick={() => setOpen(true)}
-                            className="h-9"
                           >
                             {/*<Link href={subItem.url}>*/}
                             {/*  <span*/}
