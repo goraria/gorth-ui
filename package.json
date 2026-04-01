@@ -12,90 +12,90 @@
     "ui",
     "react"
   ],
-  "main": "./.ui/index.cjs",
-  "module": "./.ui/index.js",
-  "types": "./.ui/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./.ui/index.d.ts",
-      "import": "./.ui/index.js",
-      "require": "./.ui/index.cjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./cores/lucide": {
-      "types": "./.ui/cores/lucide.d.ts",
-      "import": "./.ui/cores/lucide.js",
-      "require": "./.ui/cores/lucide.cjs"
+      "types": "./dist/cores/lucide.d.ts",
+      "import": "./dist/cores/lucide.js",
+      "require": "./dist/cores/lucide.cjs"
     },
     "./cores/sonner": {
-      "types": "./.ui/cores/sonner.d.ts",
-      "import": "./.ui/cores/sonner.js",
-      "require": "./.ui/cores/sonner.cjs"
+      "types": "./dist/cores/sonner.d.ts",
+      "import": "./dist/cores/sonner.js",
+      "require": "./dist/cores/sonner.cjs"
     },
     "./cores/radix": {
-      "types": "./.ui/cores/radix.d.ts",
-      "import": "./.ui/cores/radix.js",
-      "require": "./.ui/cores/radix.cjs"
+      "types": "./dist/cores/radix.d.ts",
+      "import": "./dist/cores/radix.js",
+      "require": "./dist/cores/radix.cjs"
     },
     "./lib/*": {
-      "types": "./.ui/lib/*.d.ts",
-      "import": "./.ui/lib/*.js",
-      "require": "./.ui/lib/*.cjs"
+      "types": "./dist/lib/*.d.ts",
+      "import": "./dist/lib/*.js",
+      "require": "./dist/lib/*.cjs"
     },
     "./default/*": {
-      "types": "./.ui/components/ui/*.d.ts",
-      "import": "./.ui/components/ui/*.js",
-      "require": "./.ui/components/ui/*.cjs"
+      "types": "./dist/components/ui/*.d.ts",
+      "import": "./dist/components/ui/*.js",
+      "require": "./dist/components/ui/*.cjs"
     },
     "./pattern/*": {
-      "types": "./.ui/components/io/*.d.ts",
-      "import": "./.ui/components/io/*.js",
-      "require": "./.ui/components/io/*.cjs"
+      "types": "./dist/components/io/*.d.ts",
+      "import": "./dist/components/io/*.js",
+      "require": "./dist/components/io/*.cjs"
     },
     "./layout/*": {
-      "types": "./.ui/components/layout/*.d.ts",
-      "import": "./.ui/components/layout/*.js",
-      "require": "./.ui/components/layout/*.cjs"
+      "types": "./dist/components/layout/*.d.ts",
+      "import": "./dist/components/layout/*.js",
+      "require": "./dist/components/layout/*.cjs"
     },
     "./block/*": {
-      "types": "./.ui/components/block/*.d.ts",
-      "import": "./.ui/components/block/*.js",
-      "require": "./.ui/components/block/*.cjs"
+      "types": "./dist/components/block/*.d.ts",
+      "import": "./dist/components/block/*.js",
+      "require": "./dist/components/block/*.cjs"
     },
     "./custom/*": {
-      "types": "./.ui/components/custom/*.d.ts",
-      "import": "./.ui/components/custom/*.js",
-      "require": "./.ui/components/custom/*.cjs"
+      "types": "./dist/components/custom/*.d.ts",
+      "import": "./dist/components/custom/*.js",
+      "require": "./dist/components/custom/*.cjs"
     },
     "./background/*": {
-      "types": "./.ui/components/background/*.d.ts",
-      "import": "./.ui/components/background/*.js",
-      "require": "./.ui/components/background/*.cjs"
+      "types": "./dist/components/background/*.d.ts",
+      "import": "./dist/components/background/*.js",
+      "require": "./dist/components/background/*.cjs"
     },
     "./provider/*": {
-      "types": "./.ui/components/provider/*.d.ts",
-      "import": "./.ui/components/provider/*.js",
-      "require": "./.ui/components/provider/*.cjs"
+      "types": "./dist/components/provider/*.d.ts",
+      "import": "./dist/components/provider/*.js",
+      "require": "./dist/components/provider/*.cjs"
     },
     "./element/*": {
-      "types": "./.ui/components/element/*.d.ts",
-      "import": "./.ui/components/element/*.js",
-      "require": "./.ui/components/element/*.cjs"
+      "types": "./dist/components/element/*.d.ts",
+      "import": "./dist/components/element/*.js",
+      "require": "./dist/components/element/*.cjs"
     },
     "./dashboard/*": {
-      "types": "./.ui/components/dashboard/*.d.ts",
-      "import": "./.ui/components/dashboard/*.js",
-      "require": "./.ui/components/dashboard/*.cjs"
+      "types": "./dist/components/dashboard/*.d.ts",
+      "import": "./dist/components/dashboard/*.js",
+      "require": "./dist/components/dashboard/*.cjs"
     },
     "./globals.css": "./src/styles/globals.css",
     "./postcss.config": "./postcss.config.mjs"
   },
   "files": [
-    ".ui",
+    "dist",
     "src/styles/globals.css",
     "postcss.config.mjs"
   ],
   "scripts": {
-    "build": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir .ui --clean",
+    "build": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir dist --clean",
     "dev": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir dist --watch",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
