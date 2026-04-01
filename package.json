@@ -95,8 +95,8 @@
     "postcss.config.mjs"
   ],
   "scripts": {
-    "build": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir dist --clean",
-    "dev": "tsup src/index.ts src/lucide.ts src/components/*/*.tsx src/hooks/*.ts src/hooks/*.tsx src/lib/*.ts src/cores/*.ts --format esm,cjs --dts --out-dir dist --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
@@ -120,6 +120,7 @@
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.38.0",
+    "fs-extra": "^11.3.4",
     "input-otp": "^1.4.2",
     "lucide-react": "^1.7.0",
     "motion": "^12.38.0",
@@ -150,6 +151,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
