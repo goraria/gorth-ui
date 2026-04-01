@@ -1,11 +1,12 @@
 /// <reference types="node" />
 
-import { copyFileSync, mkdirSync } from "node:fs"
 import { defineConfig } from "tsup"
 
 export default defineConfig({
   clean: true,
   dts: true,
+  bundle: false,
+  splitting: false,
   entry: [
     "src/index.ts",
     "src/components/*/*.tsx",
@@ -14,14 +15,10 @@ export default defineConfig({
     "src/lib/*.ts",
     "src/cores/*.ts",
   ],
-  format: ["esm", "cjs"],
+  format: ["esm"],
   sourcemap: false,
-  minify: true,
+  minify: false,
   target: "es2024",
   outDir: "dist",
   treeshake: true,
-  onSuccess: async () => {
-    mkdirSync("dist", { recursive: true })
-    copyFileSync("src/styles/globals.css", "dist/globals.css")
-  },
 })

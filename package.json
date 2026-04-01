@@ -12,90 +12,82 @@
     "ui",
     "react"
   ],
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goraria/gorth-ui.git"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "style": "./dist/globals.css",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.js"
     },
     "./cores/lucide": {
       "types": "./dist/cores/lucide.d.ts",
-      "import": "./dist/cores/lucide.js",
-      "require": "./dist/cores/lucide.cjs"
+      "import": "./dist/cores/lucide.js"
     },
     "./cores/sonner": {
       "types": "./dist/cores/sonner.d.ts",
-      "import": "./dist/cores/sonner.js",
-      "require": "./dist/cores/sonner.cjs"
+      "import": "./dist/cores/sonner.js"
     },
     "./cores/radix": {
       "types": "./dist/cores/radix.d.ts",
-      "import": "./dist/cores/radix.js",
-      "require": "./dist/cores/radix.cjs"
+      "import": "./dist/cores/radix.js"
     },
     "./lib/*": {
       "types": "./dist/lib/*.d.ts",
-      "import": "./dist/lib/*.js",
-      "require": "./dist/lib/*.cjs"
+      "import": "./dist/lib/*.js"
     },
     "./default/*": {
       "types": "./dist/components/ui/*.d.ts",
-      "import": "./dist/components/ui/*.js",
-      "require": "./dist/components/ui/*.cjs"
+      "import": "./dist/components/ui/*.js"
     },
     "./pattern/*": {
       "types": "./dist/components/io/*.d.ts",
-      "import": "./dist/components/io/*.js",
-      "require": "./dist/components/io/*.cjs"
+      "import": "./dist/components/io/*.js"
     },
     "./layout/*": {
       "types": "./dist/components/layout/*.d.ts",
-      "import": "./dist/components/layout/*.js",
-      "require": "./dist/components/layout/*.cjs"
+      "import": "./dist/components/layout/*.js"
     },
     "./block/*": {
       "types": "./dist/components/block/*.d.ts",
-      "import": "./dist/components/block/*.js",
-      "require": "./dist/components/block/*.cjs"
+      "import": "./dist/components/block/*.js"
     },
     "./custom/*": {
       "types": "./dist/components/custom/*.d.ts",
-      "import": "./dist/components/custom/*.js",
-      "require": "./dist/components/custom/*.cjs"
+      "import": "./dist/components/custom/*.js"
     },
     "./background/*": {
       "types": "./dist/components/background/*.d.ts",
-      "import": "./dist/components/background/*.js",
-      "require": "./dist/components/background/*.cjs"
+      "import": "./dist/components/background/*.js"
     },
     "./provider/*": {
       "types": "./dist/components/provider/*.d.ts",
-      "import": "./dist/components/provider/*.js",
-      "require": "./dist/components/provider/*.cjs"
+      "import": "./dist/components/provider/*.js"
     },
     "./element/*": {
       "types": "./dist/components/element/*.d.ts",
-      "import": "./dist/components/element/*.js",
-      "require": "./dist/components/element/*.cjs"
+      "import": "./dist/components/element/*.js"
     },
     "./dashboard/*": {
       "types": "./dist/components/dashboard/*.d.ts",
-      "import": "./dist/components/dashboard/*.js",
-      "require": "./dist/components/dashboard/*.cjs"
+      "import": "./dist/components/dashboard/*.js"
     },
-    "./globals.css": "./src/styles/globals.css",
+    "./globals.css": "./dist/globals.css",
     "./postcss.config": "./postcss.config.mjs"
   },
   "files": [
-    "dist",
-    "src/styles/globals.css",
-    "postcss.config.mjs"
+    "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && pnpm exec tailwindcss -i ./src/styles/globals.css -o ./dist/globals.css --minify",
     "dev": "tsup --watch",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
@@ -150,6 +142,7 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^25.5.0",

@@ -20,6 +20,12 @@ Or via dependency alias in another project:
 
 ## Usage
 
+Import library CSS once in your app entry (for Next.js App Router, put this in `app/layout.tsx`):
+
+```tsx
+import "gorth-ui/globals.css";
+```
+
 ```tsx
 import { Button } from 'gorth-ui';
 
