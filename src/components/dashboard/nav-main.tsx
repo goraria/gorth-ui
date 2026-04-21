@@ -25,7 +25,7 @@ import {
   SidebarMenuSubItem,
   SidebarMenuAction,
   useSidebar
-} from "@/components/custom/sidebar";
+} from "@/components/ui/sidebar";
 import { Badge } from "@/components/custom/badge";
 import { cn } from "@/lib/utils";
 import { NavMainItem } from "@/lib/interface";

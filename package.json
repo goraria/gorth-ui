@@ -1,6 +1,6 @@
 {
   "name": "gorth-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared shadcn-based UI package",
   "type": "module",
   "author": "Gorthenburg",
@@ -125,7 +125,7 @@
     "react-resizable-panels": "^4.10.0",
     "react-svg-credit-card-payment-icons": "^5.1.2",
     "react-use-measure": "^2.1.7",
-    "recharts": "3.8.1",
+    "recharts": "3.8.0",
     "shadcn": "^4.3.1",
     "shiki": "^4.0.2",
     "simplex-noise": "^4.0.3",

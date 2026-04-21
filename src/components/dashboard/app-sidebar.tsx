@@ -14,7 +14,7 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
-import { NavMain } from "@/components/dashboard/nav-main"
+import { NavMain, NavOrigin } from "@/components/dashboard/nav-main"
 import { NavProjects } from "@/components/dashboard/nav-projects"
 import { NavSecondary } from "@/components/dashboard/nav-secondary"
 import { NavUser } from "@/components/dashboard/nav-user"
@@ -27,6 +27,40 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+
+import { LucideIcon } from "lucide-react"
+
+interface NavSubItem {
+  title: string
+  url: string
+}
+
+interface NavItem {
+  title: string
+  url: string
+  icon: LucideIcon
+  isActive?: boolean
+  items?: NavSubItem[]
+}
+
+interface User {
+  name: string
+  email: string
+  avatar: string
+}
+
+interface ProjectItem {
+  name: string
+  url: string
+  icon: LucideIcon
+}
+
+export interface SidebarData {
+  user: User
+  navMain: NavItem[]
+  navSecondary: NavItem[]
+  projects: ProjectItem[]
+}
 
 const data = {
   user: {
@@ -152,7 +186,11 @@ const data = {
   ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
+  data: SidebarData
+}
+
+export function AppSidebar({ data, ...props }: AppSidebarProps) {
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -173,7 +211,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavOrigin items={data.navMain} />
         <NavProjects projects={data.projects} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
