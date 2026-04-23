@@ -28,11 +28,11 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar"
+} from "@/components/custom/sidebar"
 
 export function NavUser({
-                          user,
-                        }: {
+  user,
+}: {
   user: {
     name: string
     email: string

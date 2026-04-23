@@ -23,11 +23,11 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar"
+} from "@/components/custom/sidebar"
 
 export function NavProjects({
-                              projects,
-                            }: {
+  projects,
+}: {
   projects: {
     name: string
     url: string
