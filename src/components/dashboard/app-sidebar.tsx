@@ -159,7 +159,8 @@ const data = {
 
 export function AppSidebar({ data, ...props }: AppSidebarProps) {
   return (
-    <Sidebar variant="inset" {...props}>
+    <Sidebar variant="inset" collapsible="icon" {...props}>
+    {/*<Sidebar variant="inset" {...props}>*/}
       <SidebarHeader>
         {data.teams?.length ? (
           <TeamSwitcher teams={data.teams} />
