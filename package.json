@@ -1,6 +1,6 @@
 {
   "name": "gorth-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Shared shadcn-based UI package",
   "type": "module",
   "author": "Gorthenburg",
@@ -80,6 +80,7 @@
       "types": "./dist/components/dashboard/*.d.ts",
       "import": "./dist/components/dashboard/*.js"
     },
+    "./assets/*": "./dist/assets/*",
     "./globals.css": "./dist/globals.css",
     "./postcss.config": "./postcss.config.mjs"
   },
@@ -88,6 +89,7 @@
   ],
   "scripts": {
     "build": "tsup && pnpm exec tailwindcss -i ./src/styles/globals.css -o ./dist/globals.css --minify",
+    "er": "tsup && node ./scripts/copy-assets.mjs && pnpm exec tailwindcss -i ./src/styles/globals.css -o ./dist/globals.css --minify",
     "dev": "tsup --watch",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
