@@ -52,9 +52,13 @@
       "types": "./dist/components/io/*.d.ts",
       "import": "./dist/components/io/*.js"
     },
-    "./layout/*": {
-      "types": "./dist/components/layout/*.d.ts",
-      "import": "./dist/components/layout/*.js"
+    "./layouts/*": {
+      "types": "./dist/layouts/*.d.ts",
+      "import": "./dist/layouts/*.js"
+    },
+    "./providers/*": {
+      "types": "./dist/providers/*.d.ts",
+      "import": "./dist/providers/*.js"
     },
     "./block/*": {
       "types": "./dist/components/block/*.d.ts",
@@ -67,10 +71,6 @@
     "./background/*": {
       "types": "./dist/components/background/*.d.ts",
       "import": "./dist/components/background/*.js"
-    },
-    "./provider/*": {
-      "types": "./dist/components/provider/*.d.ts",
-      "import": "./dist/components/provider/*.js"
     },
     "./element/*": {
       "types": "./dist/components/element/*.d.ts",

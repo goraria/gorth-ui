@@ -12,6 +12,8 @@ export default defineConfig({
   entry: [
     "src/index.ts",
     "src/components/*/*.tsx",
+    "src/layouts/*.tsx",
+    "src/providers/*.tsx",
     "src/hooks/*.ts",
     "src/hooks/*.tsx",
     "src/lib/*.ts",
