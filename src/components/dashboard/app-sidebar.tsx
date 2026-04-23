@@ -29,6 +29,8 @@ import {
 } from "@/components/custom/sidebar"
 
 import { LucideIcon } from "lucide-react"
+import {SidebarRail} from "@/components/ui/sidebar";
+import {TeamSwitcher} from "@/components/dashboard/team-switcher";
 
 interface NavSubItem {
   title: string
@@ -55,11 +57,18 @@ interface ProjectItem {
   icon: LucideIcon
 }
 
+interface NavTeam {
+  name: string
+  logo: React.ElementType
+  plan: string
+}
+
 export interface SidebarData {
   user: User
   navMain: NavItem[]
   navSecondary: NavItem[]
   projects: ProjectItem[]
+  teams: NavTeam[]
 }
 
 const data = {
@@ -194,21 +203,22 @@ export function AppSidebar({ data, ...props }: AppSidebarProps) {
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <Command className="size-4" />
-                </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
-                </div>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+        <TeamSwitcher teams={data.teams} />
+        {/*<SidebarMenu>*/}
+        {/*  <SidebarMenuItem>*/}
+        {/*    <SidebarMenuButton size="lg" asChild>*/}
+        {/*      <a href="#">*/}
+        {/*        <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">*/}
+        {/*          <Command className="size-4" />*/}
+        {/*        </div>*/}
+        {/*        <div className="grid flex-1 text-left text-sm leading-tight">*/}
+        {/*          <span className="truncate font-medium">Acme Inc</span>*/}
+        {/*          <span className="truncate text-xs">Enterprise</span>*/}
+        {/*        </div>*/}
+        {/*      </a>*/}
+        {/*    </SidebarMenuButton>*/}
+        {/*  </SidebarMenuItem>*/}
+        {/*</SidebarMenu>*/}
       </SidebarHeader>
       <SidebarContent>
         <NavOrigin items={data.navMain} />
@@ -218,6 +228,7 @@ export function AppSidebar({ data, ...props }: AppSidebarProps) {
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   )
 }
