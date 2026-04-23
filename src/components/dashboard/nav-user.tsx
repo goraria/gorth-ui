@@ -37,11 +37,7 @@ import {
 
 import { AppSidebarUserProps, UserProps } from "@/lib/interface";
 
-export function NavUserX({
-  user,
-}: {
-  user: UserProps
-}) {
+export function NavUserX({ user }: { user: UserProps }) {
   const { isMobile } = useSidebar()
 
   return (
@@ -116,13 +112,7 @@ export function NavUserX({
   )
 }
 
-interface NavUserDropdownProps {
-  user?: any | null
-}
-
-export function NavUserDropdown({
-  user
-}: NavUserDropdownProps): JSX.Element {
+export function NavUserDropdown({ user }: { user?: any | null }): JSX.Element {
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -269,11 +259,7 @@ export function NavUser({
   )
 }
 
-export function NavAvatar({
-  user,
-}: {
-  user?: any | null
-}) {
+export function NavAvatar({ user }: { user?: any | null }) {
   return (
     <>
       <Avatar className="h-9 w-9 rounded-md">
@@ -303,11 +289,7 @@ export function NavAvatar({
   )
 }
 
-export function NavName({
-  user,
-}: {
-  user?: any | null
-}) {
+export function NavName({ user }: { user?: any | null }) {
   const name = ""
 
   return (
