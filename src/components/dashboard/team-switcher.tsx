@@ -1,6 +1,6 @@
 "use client"
 
-import React, { ElementType, useState } from "react";
+import React, { ElementType, useState } from "react"
 import { ChevronsUpDown, Plus } from "lucide-react"
 
 import {

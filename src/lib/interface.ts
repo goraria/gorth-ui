@@ -9,15 +9,23 @@ import { LucideIcon } from "lucide-react";
 export interface NavMainItem {
   title: string;
   url: string;
-  icon?: LucideIcon;
+  icon: LucideIcon;
   isActive?: boolean;
-  items?: { title: string; url: string }[];
+  items?: NavSubItem[];
+}
+
+export interface NavSubItem {
+  title: string
+  url: string
 }
 
 export interface AppSidebarUser {
-  name?: string | null;
-  email?: string | null;
-  avatar?: string | null;
+  name: string;
+  email: string;
+  avatar: string;
+  // name?: string | null;
+  // email?: string | null;
+  // avatar?: string | null;
 }
 
 export interface AppSidebarUserProps {
@@ -28,7 +36,19 @@ export interface AppSidebarUserProps {
   align?: "start" | "center" | "end";
 }
 
-export interface AppSidebarProps extends ComponentProps<typeof Sidebar> {
+export interface SidebarProps {
+  user: AppSidebarUser
+  navMain: NavMainItem[]
+  navSecondary: NavMainItem[]
+  projects: ProjectProps[]
+  teams?: TeamProps[]
+}
+
+export interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
+  data: SidebarProps
+}
+
+export interface AppSidebarPropsX extends ComponentProps<typeof Sidebar> {
   sidebar: {
     role: string;
     navMain: NavMainItem[];
@@ -43,12 +63,20 @@ export interface AppSidebarProps extends ComponentProps<typeof Sidebar> {
   // user: AppSidebarUser;
 }
 
+export interface ProjectProps {
+  name: string
+  url: string
+  icon: LucideIcon
+}
+
+export interface TeamProps {
+  name: string
+  logo: React.ElementType
+  plan: string
+}
+
 export interface TeamSwitcherProps {
-  teams: {
-    name: string
-    logo: ElementType
-    plan: string
-  }[]
+  teams: TeamProps[];
 }
 
 // ============================================================================

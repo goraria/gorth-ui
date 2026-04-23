@@ -23,53 +23,15 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  SidebarRail,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/custom/sidebar"
 
 import { LucideIcon } from "lucide-react"
-import {SidebarRail} from "@/components/ui/sidebar";
-import {TeamSwitcher} from "@/components/dashboard/team-switcher";
-
-interface NavSubItem {
-  title: string
-  url: string
-}
-
-interface NavItem {
-  title: string
-  url: string
-  icon: LucideIcon
-  isActive?: boolean
-  items?: NavSubItem[]
-}
-
-interface User {
-  name: string
-  email: string
-  avatar: string
-}
-
-interface ProjectItem {
-  name: string
-  url: string
-  icon: LucideIcon
-}
-
-interface NavTeam {
-  name: string
-  logo: React.ElementType
-  plan: string
-}
-
-export interface SidebarData {
-  user: User
-  navMain: NavItem[]
-  navSecondary: NavItem[]
-  projects: ProjectItem[]
-  teams: NavTeam[]
-}
+import { TeamSwitcher } from "@/components/dashboard/team-switcher"
+import { AppSidebarProps } from "@/lib/interface";
 
 const data = {
   user: {
@@ -195,30 +157,29 @@ const data = {
   ],
 }
 
-interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
-  data: SidebarData
-}
-
 export function AppSidebar({ data, ...props }: AppSidebarProps) {
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
-        {/*<SidebarMenu>*/}
-        {/*  <SidebarMenuItem>*/}
-        {/*    <SidebarMenuButton size="lg" asChild>*/}
-        {/*      <a href="#">*/}
-        {/*        <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">*/}
-        {/*          <Command className="size-4" />*/}
-        {/*        </div>*/}
-        {/*        <div className="grid flex-1 text-left text-sm leading-tight">*/}
-        {/*          <span className="truncate font-medium">Acme Inc</span>*/}
-        {/*          <span className="truncate text-xs">Enterprise</span>*/}
-        {/*        </div>*/}
-        {/*      </a>*/}
-        {/*    </SidebarMenuButton>*/}
-        {/*  </SidebarMenuItem>*/}
-        {/*</SidebarMenu>*/}
+        {data.teams?.length ? (
+          <TeamSwitcher teams={data.teams} />
+        ) : (
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton size="lg" asChild>
+                <a href="#">
+                  <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                    <Command className="size-4" />
+                  </div>
+                  <div className="grid flex-1 text-left text-sm leading-tight">
+                    <span className="truncate font-medium">Gorth Inc</span>
+                    <span className="truncate text-xs">Enterprise</span>
+                  </div>
+                </a>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        )}
       </SidebarHeader>
       <SidebarContent>
         <NavOrigin items={data.navMain} />
