@@ -8,16 +8,13 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/custom/sidebar"
+import { NavMainItem } from "@/lib/interface";
 
 export function NavSecondary({
   items,
   ...props
 }: {
-  items: {
-    title: string
-    url: string
-    icon: LucideIcon
-  }[]
+  items: NavMainItem[]
 } & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
   return (
     <SidebarGroup {...props}>

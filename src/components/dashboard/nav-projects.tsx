@@ -24,15 +24,12 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/custom/sidebar"
+import { ProjectProps } from "@/lib/interface";
 
 export function NavProjects({
   projects,
 }: {
-  projects: {
-    name: string
-    url: string
-    icon: LucideIcon
-  }[]
+  projects: ProjectProps[]
 }) {
   const { isMobile } = useSidebar()
 

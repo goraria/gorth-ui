@@ -19,7 +19,7 @@ export interface NavSubItem {
   url: string
 }
 
-export interface AppSidebarUser {
+export interface UserProps {
   name: string;
   email: string;
   avatar: string;
@@ -37,7 +37,7 @@ export interface AppSidebarUserProps {
 }
 
 export interface SidebarProps {
-  user: AppSidebarUser
+  user: UserProps
   navMain: NavMainItem[]
   navSecondary: NavMainItem[]
   projects: ProjectProps[]
