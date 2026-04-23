@@ -6,7 +6,9 @@ export default defineConfig({
   clean: true,
   dts: true,
   bundle: true,
-  splitting: false,
+  // Keep shared modules (e.g. React contexts) in common chunks
+  // so different entrypoints consume the same runtime instance.
+  splitting: true,
   entry: [
     "src/index.ts",
     "src/components/*/*.tsx",
