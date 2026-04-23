@@ -59,7 +59,7 @@ export function AppSidebar({ data, ...props }: AppSidebarProps) {
         )}
       </SidebarHeader>
       <SidebarContent>
-        <NavOrigin items={data.navMain} />
+        <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
