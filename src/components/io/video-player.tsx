@@ -10,6 +10,30 @@ import {
   MediaTimeDisplay,
   MediaTimeRange,
   MediaVolumeRange,
+
+  MediaAirplayButton,
+  MediaCaptionsButton,
+  MediaCastButton,
+  MediaChromeButton,
+  MediaChromeDialog,
+  MediaChromeRange,
+  MediaContainer,
+  MediaDurationDisplay,
+  MediaErrorDialog,
+  MediaFullscreenButton,
+  MediaGestureReceiver,
+  MediaKeyboardShortcutsDialog,
+  MediaLiveButton,
+  MediaLoopButton,
+  MediaPipButton,
+  MediaLoadingIndicator,
+  MediaPosterImage,
+  MediaPreviewChapterDisplay,
+  MediaPreviewThumbnail,
+  MediaPlaybackRateButton,
+  MediaTooltip,
+  MediaTextDisplay,
+  MediaPreviewTimeDisplay
 } from "media-chrome/react"
 import type { ComponentProps, CSSProperties } from "react"
 import { cn } from "@/lib/utils"
@@ -90,6 +114,164 @@ export type VideoPlayerMuteButtonProps = ComponentProps<typeof MediaMuteButton>
 
 export const VideoPlayerMuteButton = ({ className, ...props }: VideoPlayerMuteButtonProps) => (
   <MediaMuteButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+//
+
+export type VideoPlayerAirplayButtonProps = ComponentProps<typeof MediaAirplayButton>
+
+export const VideoPlayerAirplayButton = ({ className, ...props }: VideoPlayerAirplayButtonProps) => (
+  <MediaAirplayButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerCaptionsButtonProps = ComponentProps<typeof MediaCaptionsButton>
+
+export const VideoPlayerCaptionsButton = ({ className, ...props }: VideoPlayerCaptionsButtonProps) => (
+  <MediaCaptionsButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerCastButtonProps = ComponentProps<typeof MediaCastButton>
+
+export const VideoPlayerCastButton = ({ className, ...props }: VideoPlayerCastButtonProps) => (
+  <MediaCastButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerChromeButtonProps = ComponentProps<typeof MediaChromeButton>
+
+export const VideoPlayerChromeButton = ({ className, ...props }: VideoPlayerChromeButtonProps) => (
+  <MediaChromeButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerChromeDialogProps = ComponentProps<typeof MediaChromeDialog>
+
+export const VideoPlayerChromeDialog = ({ className, ...props }: VideoPlayerChromeDialogProps) => (
+  <MediaChromeDialog className={className} {...(props as any)} />
+)
+
+export type VideoPlayerChromeRangeProps = ComponentProps<typeof MediaChromeRange>
+
+export const VideoPlayerChromeRange = ({ className, ...props }: VideoPlayerChromeRangeProps) => (
+  <MediaChromeRange className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerContainerProps = ComponentProps<typeof MediaContainer>
+
+export const VideoPlayerContainer = ({ className, ...props }: VideoPlayerContainerProps) => (
+  <MediaContainer className={className} {...(props as any)} />
+)
+
+export type VideoPlayerDurationDisplayProps = ComponentProps<typeof MediaDurationDisplay>
+
+export const VideoPlayerDurationDisplay = ({ className, ...props }: VideoPlayerDurationDisplayProps) => (
+  <MediaDurationDisplay className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerErrorDialogProps = ComponentProps<typeof MediaErrorDialog>
+
+export const VideoPlayerErrorDialog = ({ className, ...props }: VideoPlayerErrorDialogProps) => (
+  <MediaErrorDialog className={className} {...(props as any)} />
+)
+
+export type VideoPlayerFullscreenButtonProps = ComponentProps<typeof MediaFullscreenButton>
+
+export const VideoPlayerFullscreenButton = ({ className, ...props }: VideoPlayerFullscreenButtonProps) => (
+  <MediaFullscreenButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerGestureReceiverProps = ComponentProps<typeof MediaGestureReceiver>
+
+export const VideoPlayerGestureReceiver = ({ className, ...props }: VideoPlayerGestureReceiverProps) => (
+  <MediaGestureReceiver className={className} {...(props as any)} />
+)
+
+export type VideoPlayerKeyboardShortcutsDialogProps = ComponentProps<typeof MediaKeyboardShortcutsDialog>
+
+export const VideoPlayerKeyboardShortcutsDialog = ({
+  className,
+  ...props
+}: VideoPlayerKeyboardShortcutsDialogProps) => (
+  <MediaKeyboardShortcutsDialog className={className} {...(props as any)} />
+)
+
+export type VideoPlayerLiveButtonProps = ComponentProps<typeof MediaLiveButton>
+
+export const VideoPlayerLiveButton = ({ className, ...props }: VideoPlayerLiveButtonProps) => (
+  <MediaLiveButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerLoopButtonProps = ComponentProps<typeof MediaLoopButton>
+
+export const VideoPlayerLoopButton = ({ className, ...props }: VideoPlayerLoopButtonProps) => (
+  <MediaLoopButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerPipButtonProps = ComponentProps<typeof MediaPipButton>
+
+export const VideoPlayerPipButton = ({ className, ...props }: VideoPlayerPipButtonProps) => (
+  <MediaPipButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerLoadingIndicatorProps = ComponentProps<typeof MediaLoadingIndicator>
+
+export const VideoPlayerLoadingIndicator = ({
+  className,
+  ...props
+}: VideoPlayerLoadingIndicatorProps) => (
+  <MediaLoadingIndicator className={className} {...(props as any)} />
+)
+
+export type VideoPlayerPosterImageProps = ComponentProps<typeof MediaPosterImage>
+
+export const VideoPlayerPosterImage = ({ className, ...props }: VideoPlayerPosterImageProps) => (
+  <MediaPosterImage className={className} {...(props as any)} />
+)
+
+export type VideoPlayerPreviewChapterDisplayProps = ComponentProps<typeof MediaPreviewChapterDisplay>
+
+export const VideoPlayerPreviewChapterDisplay = ({
+  className,
+  ...props
+}: VideoPlayerPreviewChapterDisplayProps) => (
+  <MediaPreviewChapterDisplay className={className} {...(props as any)} />
+)
+
+export type VideoPlayerPreviewThumbnailProps = ComponentProps<typeof MediaPreviewThumbnail>
+
+export const VideoPlayerPreviewThumbnail = ({
+  className,
+  ...props
+}: VideoPlayerPreviewThumbnailProps) => (
+  <MediaPreviewThumbnail className={className} {...(props as any)} />
+)
+
+export type VideoPlayerPlaybackRateButtonProps = ComponentProps<typeof MediaPlaybackRateButton>
+
+export const VideoPlayerPlaybackRateButton = ({
+  className,
+  ...props
+}: VideoPlayerPlaybackRateButtonProps) => (
+  <MediaPlaybackRateButton className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerTooltipProps = ComponentProps<typeof MediaTooltip>
+
+export const VideoPlayerTooltip = ({ className, ...props }: VideoPlayerTooltipProps) => (
+  <MediaTooltip className={className} {...(props as any)} />
+)
+
+export type VideoPlayerTextDisplayProps = ComponentProps<typeof MediaTextDisplay>
+
+export const VideoPlayerTextDisplay = ({ className, ...props }: VideoPlayerTextDisplayProps) => (
+  <MediaTextDisplay className={cn("p-2.5", className)} {...(props as any)} />
+)
+
+export type VideoPlayerPreviewTimeDisplayProps = ComponentProps<typeof MediaPreviewTimeDisplay>
+
+export const VideoPlayerPreviewTimeDisplay = ({
+  className,
+  ...props
+}: VideoPlayerPreviewTimeDisplayProps) => (
+  <MediaPreviewTimeDisplay className={cn("p-2.5", className)} {...(props as any)} />
 )
 
 export type VideoPlayerContentProps = ComponentProps<"video">
