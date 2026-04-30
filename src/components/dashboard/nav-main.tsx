@@ -113,9 +113,7 @@ export function NavOrigin({ items, ...props }: NavCoreProps) {
 export function NavMain({ items, ...props }: NavCoreProps) {
   const { setOpen } = useSidebar();
   const pathname = usePathname();
-  // const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  // Helper to check if a menu or submenu is active by current route
   const isMenuActive = useCallback((item: NavMainItem) => {
     if (item.url !== "#" && pathname === item.url) return true;
     if (item.items) {
@@ -127,13 +125,7 @@ export function NavMain({ items, ...props }: NavCoreProps) {
     return item.url !== "#" && pathname === item.url;
   }, [pathname]);
 
-  // useEffect(() => {
-  //   const idx = items.findIndex((item: NavMainItem) => isMenuActive(item));
-  //   setOpenIndex(idx !== -1 ? idx : null);
-  // }, [pathname, items]);
-
-  // Tính toán nav mở mặc định ngay từ lần render đầu tiên
-  const getDefaultOpenIndex = React.useCallback(() => {
+  const getDefaultOpenIndex = useCallback(() => {
     return items.findIndex((item: NavMainItem) => isMenuActive(item));
   }, [items, isMenuActive]);
   const [openIndex, setOpenIndex] = useState<number | null>(() => {
@@ -141,13 +133,11 @@ export function NavMain({ items, ...props }: NavCoreProps) {
     return idx !== -1 ? idx : null;
   });
 
-  // Đồng bộ openIndex khi pathname hoặc items thay đổi (nếu cần)
   useEffect(() => {
     const idx = getDefaultOpenIndex();
     setOpenIndex(idx !== -1 ? idx : null);
   }, [getDefaultOpenIndex]);
 
-  // Hiển thị hiệu ứng cho tất cả nav đang hiển thị (có items), không chỉ nav đang active
   return (
     <SidebarGroup {...props}>
       {/*<SidebarGroupLabel className="text-lg font-medium">Main</SidebarGroupLabel>*/}
@@ -155,6 +145,7 @@ export function NavMain({ items, ...props }: NavCoreProps) {
         {items.map((item: NavMainItem, idx: number) => {
           const isOpen = openIndex === idx;
           const hasSubMenu = Array.isArray(item.items) && item.items.length > 0;
+          const Icon = item.icon
 
           if (!hasSubMenu) {
             return (
@@ -165,7 +156,7 @@ export function NavMain({ items, ...props }: NavCoreProps) {
                   asChild
                 >
                   <Link href={item.url} onClick={() => setOpen(true)}>
-                    {item.icon && <item.icon />}
+                    {Icon && <Icon />}
                     <span>{item.title}</span>
                   </Link>
                 </SidebarMenuButton>
@@ -247,28 +238,6 @@ export function NavMain({ items, ...props }: NavCoreProps) {
                       ))}
                     </SidebarMenuSub>
                   )}
-                  {/*{hasSubMenu && (*/}
-                  {/*  <SidebarMenuSub>*/}
-                  {/*    {item.items?.map((subItem: { title: string; url: string }, sIdx: number) => (*/}
-                  {/*      <SidebarMenuItem key={`${item.title}-${subItem.title}-${subItem.url}-${sIdx}`}>*/}
-                  {/*        <SidebarMenuButton*/}
-                  {/*          tooltip={{*/}
-                  {/*            children: subItem.title,*/}
-                  {/*            hidden: false,*/}
-                  {/*          }}*/}
-                  {/*          onClick={() => {*/}
-                  {/*            setOpen(true);*/}
-                  {/*          }}*/}
-                  {/*          isActive={isSubMenuActive(subItem)}*/}
-                  {/*        >*/}
-                  {/*          <Link href={subItem.url}>*/}
-                  {/*            <span>{subItem.title}</span>*/}
-                  {/*          </Link>*/}
-                  {/*        </SidebarMenuButton>*/}
-                  {/*      </SidebarMenuItem>*/}
-                  {/*    ))}*/}
-                  {/*  </SidebarMenuSub>*/}
-                  {/*)}*/}
                 </motion.div>
               </SidebarMenuItem>
             </Collapsible>
