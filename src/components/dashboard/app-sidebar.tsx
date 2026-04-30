@@ -26,7 +26,7 @@ import {
   SidebarRail,
   SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem,
+  SidebarMenuItem, SidebarSeparator,
 } from "@/components/custom/sidebar"
 
 import { LucideIcon } from "lucide-react"
@@ -58,11 +58,15 @@ export function AppSidebar({ data, ...props }: AppSidebarProps) {
           </SidebarMenu>
         )}
       </SidebarHeader>
+      <SidebarSeparator className="mx-0" />
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        {/*<SidebarSeparator className="mx-0" />*/}
+        <NavSecondary items={data.navSecondary} />
+        {/*<SidebarSeparator className="mx-0" />*/}
+        <NavProjects projects={data.projects} className="mt-auto" />
       </SidebarContent>
+      <SidebarSeparator className="mx-0" />
       <SidebarFooter>
         <NavUser user={data.user} type="sidebar" side="right" size="lg" />
       </SidebarFooter>

@@ -106,7 +106,7 @@
     "shadcn:io:hooks": "bash ./scripts/shadcn-io-hooks.sh"
   },
   "dependencies": {
-    "ai": "^6.0.168",
+    "ai": "^6.0.170",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -116,7 +116,7 @@
     "framer-motion": "^12.38.0",
     "fs-extra": "^11.3.4",
     "input-otp": "^1.4.2",
-    "lucide-react": "^1.9.0",
+    "lucide-react": "^1.14.0",
     "motion": "^12.38.0",
     "radix-ui": "^1.4.3",
     "react-day-picker": "^9.14.0",
@@ -127,8 +127,8 @@
     "react-resizable-panels": "^4.10.0",
     "react-svg-credit-card-payment-icons": "^5.1.2",
     "react-use-measure": "^2.1.7",
-    "recharts": "3.8.1",
-    "shadcn": "^4.4.0",
+    "recharts": "3.8.0",
+    "shadcn": "^4.6.0",
     "shiki": "^4.0.2",
     "simplex-noise": "^4.0.3",
     "sonner": "^2.0.7",

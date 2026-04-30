@@ -10,26 +10,29 @@ import {
 } from "@/components/custom/sidebar"
 import { NavMainItem } from "@/lib/interface";
 
-export function NavSecondary({
-  items,
-  ...props
-}: {
-  items: NavMainItem[]
-} & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
+interface NavCoreProps extends React.ComponentPropsWithoutRef<typeof SidebarGroup> {
+  items: NavMainItem[];
+}
+
+export function NavSecondary({ items, ...props }: NavCoreProps) {
   return (
     <SidebarGroup {...props}>
       <SidebarGroupContent>
         <SidebarMenu>
-          {items.map((item) => (
-            <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild size="sm">
-                <a href={item.url}>
-                  <item.icon />
-                  <span>{item.title}</span>
-                </a>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          ))}
+          {items.map((item) => {
+            const Icon = item.icon
+
+            return (
+              <SidebarMenuItem key={item.title}>
+                <SidebarMenuButton asChild>
+                  <a href={item.url}>
+                    <Icon />
+                    <span>{item.title}</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            )
+          })}
         </SidebarMenu>
       </SidebarGroupContent>
     </SidebarGroup>

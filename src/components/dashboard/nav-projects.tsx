@@ -1,5 +1,6 @@
 "use client"
 
+import * as React from "react";
 import {
   Folder,
   MoreHorizontal,
@@ -24,18 +25,18 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/custom/sidebar"
-import { ProjectProps } from "@/lib/interface";
+import { NavMainItem, ProjectProps } from "@/lib/interface";
 
-export function NavProjects({
-  projects,
-}: {
-  projects: ProjectProps[]
-}) {
+interface NavCoreProps extends React.ComponentPropsWithoutRef<typeof SidebarGroup> {
+  projects: ProjectProps[];
+}
+
+export function NavProjects({ projects }: NavCoreProps) {
   const { isMobile } = useSidebar()
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Projects</SidebarGroupLabel>
+      <SidebarGroupLabel className="text-lg font-medium">Explore</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>

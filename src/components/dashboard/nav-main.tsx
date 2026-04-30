@@ -30,14 +30,14 @@ import { Badge } from "@/components/custom/badge";
 import { cn } from "@/lib/utils";
 import { NavMainItem } from "@/lib/interface";
 
-interface NavCoreProps {
+interface NavCoreProps extends React.ComponentPropsWithoutRef<typeof SidebarGroup> {
   items: NavMainItem[];
 }
 
-export function NavOrigin({ items }: NavCoreProps) {
+export function NavOrigin({ items, ...props }: NavCoreProps) {
   return (
-    <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+    <SidebarGroup {...props}>
+      <SidebarGroupLabel className="text-lg font-medium">Platform</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
@@ -110,7 +110,7 @@ export function NavOrigin({ items }: NavCoreProps) {
   )
 }
 
-export function NavMain({ items }: NavCoreProps) {
+export function NavMain({ items, ...props }: NavCoreProps) {
   const { setOpen } = useSidebar();
   const pathname = usePathname();
   // const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -149,8 +149,8 @@ export function NavMain({ items }: NavCoreProps) {
 
   // Hiển thị hiệu ứng cho tất cả nav đang hiển thị (có items), không chỉ nav đang active
   return (
-    <SidebarGroup>
-      <SidebarGroupLabel>Tất cả</SidebarGroupLabel>
+    <SidebarGroup {...props}>
+      {/*<SidebarGroupLabel className="text-lg font-medium">Main</SidebarGroupLabel>*/}
       <SidebarMenu>
         {items.map((item: NavMainItem, idx: number) => {
           const isOpen = openIndex === idx;
@@ -319,19 +319,19 @@ export function NavSub({ items }: NavCoreProps) {
   // }, [pathname, items]);
 
   // Tính toán nav mở mặc định ngay từ lần render đầu tiên
-  const getDefaultOpenIndex = React.useCallback(() => {
+  const getDefaultOpenIndexS = React.useCallback(() => {
     return items.findIndex((item: NavMainItem) => isMenuActive(item));
   }, [items, isMenuActive]);
   const [openIndex, setOpenIndex] = useState<number | null>(() => {
-    const idx = getDefaultOpenIndex();
+    const idx = getDefaultOpenIndexS();
     return idx !== -1 ? idx : null;
   });
 
   // Đồng bộ openIndex khi pathname hoặc items thay đổi (nếu cần)
   useEffect(() => {
-    const idx = getDefaultOpenIndex();
+    const idx = getDefaultOpenIndexS();
     setOpenIndex(idx !== -1 ? idx : null);
-  }, [getDefaultOpenIndex]);
+  }, [getDefaultOpenIndexS]);
 
   // Hiển thị hiệu ứng cho tất cả nav đang hiển thị (có items), không chỉ nav đang active
   return (
