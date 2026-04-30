@@ -9,7 +9,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/custom/dropdown"
 import { MoonStar, Moon, Sun, Monitor } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -49,14 +49,13 @@ export function ModeToggle({
     }
   }
 
-  // Icon hiển thị dựa trên theme hiện tại
   const getCurrentIcon = () => {
     if (theme === "system") {
-      return <Monitor className="h-[1.2rem] w-[1.2rem]" />
+      return <Monitor className="size-4" />
     } else if (theme === "dark" || (theme === "system" && resolvedTheme === "dark")) {
-      return <Moon className="h-[1.2rem] w-[1.2rem]" />
+      return <Moon className="size-4" />
     } else {
-      return <Sun className="h-[1.2rem] w-[1.2rem]" />
+      return <Sun className="size-4" />
     }
   }
 
@@ -66,8 +65,6 @@ export function ModeToggle({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon">
-              {/* <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" /> */}
-              {/* <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" /> */}
               {getCurrentIcon()}
               <span className="sr-only">Toggle theme</span>
             </Button>
