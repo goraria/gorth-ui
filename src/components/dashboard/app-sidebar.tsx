@@ -61,9 +61,9 @@ export function AppSidebar({ data, ...props }: AppSidebarProps) {
       {/*<SidebarSeparator className="mx-0" />*/}
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <SidebarSeparator className="m-0" />
+        <SidebarSeparator className="mx-0 -my-2" />
         <NavSecondary items={data.navSecondary} />
-        <SidebarSeparator className="m-0" />
+        <SidebarSeparator className="mx-0 -my-2" />
         <NavProjects projects={data.projects} className="mt-auto" />
       </SidebarContent>
       {/*<SidebarSeparator className="mx-0" />*/}
