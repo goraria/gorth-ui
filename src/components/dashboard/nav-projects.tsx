@@ -36,7 +36,7 @@ export function NavProjects({ projects }: NavCoreProps) {
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel className="text-[16px] font-medium">Explore</SidebarGroupLabel>
+      <SidebarGroupLabel className="text-base font-medium">Explore</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>

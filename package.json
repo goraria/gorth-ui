@@ -1,6 +1,6 @@
 {
   "name": "gorth-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Shared shadcn-based UI package",
   "type": "module",
   "author": "Gorthenburg",
@@ -117,6 +117,7 @@
     "fs-extra": "^11.3.4",
     "input-otp": "^1.4.2",
     "lucide-react": "^1.14.0",
+    "media-chrome": "^4.19.0",
     "motion": "^12.38.0",
     "radix-ui": "^1.4.3",
     "react-day-picker": "^9.14.0",
