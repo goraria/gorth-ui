@@ -2,18 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import {
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  LifeBuoy,
-  Map,
-  PieChart,
-  Send,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react"
+import { Command } from "lucide-react"
 
 import { NavMain, NavOrigin } from "@/components/dashboard/nav-main"
 import { NavProjects } from "@/components/dashboard/nav-projects"
