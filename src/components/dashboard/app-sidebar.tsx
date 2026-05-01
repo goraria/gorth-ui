@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import {
   BookOpen,
   Bot,
@@ -45,25 +46,25 @@ export function AppSidebar({ data, ...props }: AppSidebarProps) {
             <SidebarMenuItem>
               <SidebarMenuButton size="lg" className="h-14" asChild>
                 {data.brand && data.brand.logo ? (
-                  <a href="/">
-                    <div className="flex aspect-square size-9 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
-                      <img src={data.brand.logo} className="size-4"  alt={data.brand.name}/>
+                  <Link href="/">
+                    <div className="flex aspect-square size-9 items-center justify-center rounded-md text-sidebar-primary-foreground">
+                      <img src={data.brand.logo} className="size-9"  alt={data.brand.name}/>
                     </div>
                     <div className="grid flex-1 text-left text-sm leading-tight">
                       <span className="truncate font-medium">{data.brand.name}</span>
                       {data.brand.plan && <span className="truncate text-xs">{data.brand.plan}</span>}
                     </div>
-                  </a>
+                  </Link>
                 ) : (
-                  <a href="/">
-                    <div className="flex aspect-square size-9 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
+                  <Link href="/">
+                    <div className="flex aspect-square size-9 items-center justify-center rounded-md bg-professional-main text-sidebar-primary-foreground">
                       <Command className="size-4" />
                     </div>
                     <div className="grid flex-1 text-left text-sm leading-tight">
                       <span className="truncate font-medium">Gorth Inc</span>
                       <span className="truncate text-xs">Enterprise</span>
                     </div>
-                  </a>
+                  </Link>
                 )}
               </SidebarMenuButton>
             </SidebarMenuItem>
