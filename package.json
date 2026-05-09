@@ -89,7 +89,7 @@
   ],
   "scripts": {
     "build": "tsup && pnpm exec tailwindcss -i ./src/styles/globals.css -o ./dist/globals.css --minify",
-    "prepack": "pnpm build",
+    "prepare": "pnpm build",
     "er": "tsup && node ./scripts/copy-assets.mjs && pnpm exec tailwindcss -i ./src/styles/globals.css -o ./dist/globals.css --minify",
     "dev": "tsup --watch",
     "lint": "eslint",
