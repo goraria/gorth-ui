@@ -114,21 +114,8 @@ export function NavUserX({ user }: { user: UserProps }) {
   )
 }
 
-export function NavUserDropdown({ user }: { user?: any | null }): JSX.Element {
+export function NavUserDropdown({ user, logout }: { user?: any | null; logout?: () => void }): JSX.Element {
   const router = useRouter();
-
-  const handleLogout = async () => {
-    // try {
-    //   const supabase = createClient()
-    //   await callback().unwrap();
-    //   await supabase.auth.signOut()
-    //   router.push('/sign-in')
-    // } catch (error) {
-    //   console.error('Logout error:', error);
-    //   // Fallback: redirect to home page anyway
-    //   router.push('/');
-    // }
-  };
 
   return (
     <>
@@ -162,7 +149,7 @@ export function NavUserDropdown({ user }: { user?: any | null }): JSX.Element {
           <NavDropdownItem
             icon={LogOut}
             title="Đăng xuất"
-            action={handleLogout}
+            action={logout ? logout : () => {}}
           />
         </>
       ) : (
@@ -312,7 +299,7 @@ export function NavAvatar({ user }: { user?: any | null }) {
 }
 
 export function NavName({ user }: { user?: any | null }) {
-  const name = ""
+  const name = user.name
 
   return (
     <>
