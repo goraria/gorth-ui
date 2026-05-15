@@ -37,7 +37,7 @@ import {
   LucideIcon,
 } from "lucide-react"
 
-import { AppSidebarUserProps, UserProps } from "@/lib/interface";
+import { AppSidebarUserProps, NavDropdown, NavMainItem, UserProps } from "@/lib/interface";
 
 export function NavUserX({ user }: { user: UserProps }) {
   const { isMobile } = useSidebar()
@@ -114,7 +114,15 @@ export function NavUserX({ user }: { user: UserProps }) {
   )
 }
 
-export function NavUserDropdown({ user, logout }: { user?: any | null; logout?: () => void }): JSX.Element {
+export function NavUserDropdown({
+  user,
+  nav,
+  logout
+}: {
+  user?: any | null;
+  nav?: NavDropdown;
+  logout?: () => void
+}): JSX.Element {
   const router = useRouter();
 
   return (
@@ -129,21 +137,14 @@ export function NavUserDropdown({ user, logout }: { user?: any | null; logout?: 
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <NavDropdownItem
-              icon={BadgeCheck}
-              title="Tài khoản"
-              link="/setting/information"
-            />
-            <NavDropdownItem
-              icon={CreditCard}
-              title="Thanh toán"
-              link="/setting/payment"
-            />
-            <NavDropdownItem
-              icon={Bolt}
-              title="Cài đặt"
-              link="/setting"
-            />
+            {nav && nav.main.map((item, index) => (
+              <NavDropdownItem
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                link={item.url}
+              />
+            ))}
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <NavDropdownItem
@@ -154,24 +155,22 @@ export function NavUserDropdown({ user, logout }: { user?: any | null; logout?: 
         </>
       ) : (
         <>
-          <DropdownMenuLabel className="p-0 font-normal">
-            <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-              <NavAvatar user={user} />
-              <NavName user={user} />
-            </div>
-          </DropdownMenuLabel>
-          <DropdownMenuSeparator />
+          {/*<DropdownMenuLabel className="p-0 font-normal">*/}
+          {/*  <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">*/}
+          {/*    <NavAvatar user={user} />*/}
+          {/*    <NavName user={user} />*/}
+          {/*  </div>*/}
+          {/*</DropdownMenuLabel>*/}
+          {/*<DropdownMenuSeparator />*/}
           <DropdownMenuGroup>
-            <NavDropdownItem
-              icon={LogIn}
-              title="Đăng nhập"
-              link="/sign-in"
-            />
-            <NavDropdownItem
-              icon={KeySquare}
-              title="Đăng ký"
-              link="/sign-up"
-            />
+            {nav && nav.secondary.map((item, index) => (
+              <NavDropdownItem
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                link={item.url}
+              />
+            ))}
           </DropdownMenuGroup>
         </>
       )}
@@ -181,6 +180,7 @@ export function NavUserDropdown({ user, logout }: { user?: any | null; logout?: 
 
 export function NavUser({
   user,
+  nav,
   type,
   size = "icon",
   side = "bottom",
@@ -208,7 +208,7 @@ export function NavUser({
               align={align}
               sideOffset={4}
             >
-              <NavUserDropdown user={user} />
+              <NavUserDropdown user={user} nav={nav} />
             </DropdownMenuContent>
           </DropdownMenu>
         </>
@@ -255,7 +255,7 @@ export function NavUser({
                   align={align}
                   sideOffset={4}
                 >
-                  <NavUserDropdown user={user} />
+                  <NavUserDropdown user={user} nav={nav} />
                 </DropdownMenuContent>
               </DropdownMenu>
             </SidebarMenuItem>

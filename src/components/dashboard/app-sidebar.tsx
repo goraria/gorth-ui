@@ -23,7 +23,7 @@ import { LucideIcon } from "lucide-react"
 import { TeamSwitcher } from "@/components/dashboard/team-switcher"
 import { AppSidebarProps } from "@/lib/interface";
 
-export function AppSidebar({ data, ...props }: AppSidebarProps) {
+export function AppSidebar({ data, dropdown, ...props }: AppSidebarProps) {
   return (
     <Sidebar collapsible="icon" {...props}>
     {/*<Sidebar variant="inset" {...props}>*/}
@@ -76,7 +76,7 @@ export function AppSidebar({ data, ...props }: AppSidebarProps) {
       </SidebarContent>
       {/*<SidebarSeparator className="mx-0" />*/}
       <SidebarFooter>
-        <NavUser user={data.user} type="sidebar" side="right" size="lg" />
+        <NavUser user={data.user} nav={dropdown} type="sidebar" side="right" size="lg" />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

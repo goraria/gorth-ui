@@ -19,6 +19,11 @@ export interface NavSubItem {
   url: string
 }
 
+export interface NavDropdown {
+  main: NavMainItem[]
+  secondary: NavMainItem[]
+}
+
 export interface UserProps {
   name: string;
   email: string;
@@ -30,6 +35,7 @@ export interface UserProps {
 
 export interface AppSidebarUserProps {
   user?: any | null;
+  nav?: NavDropdown;
   type?: "sidebar" | "navbar";
   size?: "icon" | "sm" | "md" | "lg";
   side?: "top" | "bottom" | "left" | "right";
@@ -46,7 +52,8 @@ export interface SidebarProps {
 }
 
 export interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
-  data: SidebarProps
+  data: SidebarProps,
+  dropdown?: NavDropdown
 }
 
 export interface AppSidebarPropsX extends ComponentProps<typeof Sidebar> {
