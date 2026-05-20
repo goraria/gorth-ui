@@ -1,4 +1,2 @@
-import useSWR from "swr";
-
+export { default } from "swr";
 export * from "swr";
-export default useSWR
