@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react";
+import Link from "next/link"
 import {
   Folder,
   MoreHorizontal,
@@ -41,10 +42,10 @@ export function NavProjects({ projects }: NavCoreProps) {
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
-              <a href={item.url}>
+              <Link href={item.url}>
                 <item.icon />
                 <span>{item.name}</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
