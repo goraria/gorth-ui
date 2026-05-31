@@ -136,29 +136,42 @@ export function NavUserDropdown({
             </div>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuGroup>
-            {auth.authenticated ? nav.main.map((item, index) => (
+          {auth.authenticated ? nav.main.map((item, index) => (
+            <>
+              <DropdownMenuGroup>
+                <NavDropdownItem
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  link={item.url}
+                />
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
               <NavDropdownItem
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                link={item.url}
+                icon={LogOut}
+                title="Đăng xuất"
+                action={auth.logout}
               />
-            )) : nav.secondary.map((item, index) => (
-              <NavDropdownItem
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                link={item.url}
-              />
-            ))}
-          </DropdownMenuGroup>
-          <DropdownMenuSeparator />
-          <NavDropdownItem
-            icon={LogOut}
-            title="Đăng xuất"
-            action={auth.logout}
-          />
+            </>
+          )) : nav.secondary.map((item, index) => (
+            <>
+              <DropdownMenuGroup>
+                <NavDropdownItem
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  action={(
+                    item.url === "/sign-in" ? (
+                      auth.login
+                    ) : item.url === "/sign-up" ? (
+                      auth.register
+                    ) : () => {}
+                  )}
+                  // link={item.url}
+                />
+              </DropdownMenuGroup>
+            </>
+          ))}
         </>
       ) : (
         <>
