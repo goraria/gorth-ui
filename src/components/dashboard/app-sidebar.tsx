@@ -104,7 +104,7 @@ export function AppSidebar({ data, auth, ...props }: AppSidebarProps) {
 // import { NavProjects } from "@/components/dashboard/nav-projects"
 // import { NavUser } from "@/components/dashboard/nav-user"
 // import { TeamSwitcher } from "@/components/dashboard/team-switcher"
-// import { type LucideIcon } from "lucide-react"
+// import { type LucideIcon } from "lucide-react"k
 // import {
 //   Sidebar,
 //   SidebarContent,
